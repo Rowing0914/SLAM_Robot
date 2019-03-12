@@ -1,6 +1,6 @@
 ## **SLAM and autonomous navigation with ROS + kinect + Arduino**
 
-This is the project for the autonomous navigation of the mobile robot which is built from scratch by myself with a huge support from Dr.Stephen Alty(https://www.linkedin.com/in/steve-alty-85405432/?originalSubdomain=uk)
+This is the project for the autonomous navigation of the mobile robot which is built from scratch by myself with a huge support from Dr.Stephen Alty at Royal Holloway, University of London
 
 
 
