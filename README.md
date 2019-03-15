@@ -40,6 +40,49 @@ https://sungjik.wordpress.com/2015/09/28/my_personal_robotic_companion/
 
 
 
+## Environment
+
+- DELL Inspiron 15 7500
+  - CPU: i7 7th Gen
+  - GPU: GTX1060 Max Design
+  - OS: Ubuntu 16.0.4 LTS
+  - ROS: Kinetic
+  - Python: 3.6.2
+- Raspberry Pi
+  - Model: 3 Model B+
+  - OS: Light Ubuntu(I wanted to use Ubuntu)
+
+
+
+## ROS on distributed machines
+
+- Set `ROS_IP` on each machine: 
+- Set an IP address/HOSTNAME of the master server as `ROS_MASTER_URI` on each machine
+
+- Reference: http://wiki.ros.org/ROS/Tutorials/MultipleMachines
+
+
+
+```shell
+$ export ROS_IP=ip_address
+# 11311 is the default port for rosmaster
+$ export ROS_MASTER_URI=http://ip_address_of_master:1131 
+
+# Test
+# on master
+$ roscore
+$ rosrun rospy_tutorials listener.py
+
+# on server
+$ rosrun rospy_tutorials talker.py
+```
+
+
+
+![1552685720092](images/ros_tips.png)
+
+
+
 ## DC Motor Specification
 
 [Specification Link](https://www.banggood.com/6V-210RPM-Encoder-Motor-DC-Gear-Motor-with-Mounting-Bracket-and-Wheel-p-1044064.html?akmClientCountry=GB&cur_warehouse=CN)
