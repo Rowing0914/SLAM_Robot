@@ -54,6 +54,48 @@ https://sungjik.wordpress.com/2015/09/28/my_personal_robotic_companion/
 
 
 
+## How to use
+
+```shell
+# ===== Server =====
+$ export ROS_IP=ip_address
+$ export ROS_MASTER_URI=http://ip_address_of_master:1131
+$ cd ~/sketchbook/rosserial_test
+# using arduino-make, we deploy the code(.ino file) followed by launching the ros topic
+$ sh deploy_run_ros.sh
+
+# ===== Local Machine =====
+$ export ROS_IP=ip_address
+$ export ROS_MASTER_URI=http://ip_address_of_master:1131
+# check if the topic has been successfully launched
+$ rostopic list
+# go forward
+$ rostopic pub /remote_control std_msgs/String "data: 'FORWARD'"
+# turn left
+$ rostopic pub /remote_control std_msgs/String "data: 'LEFT'"
+# turn right
+$ rostopic pub /remote_control std_msgs/String "data: 'RIGHT'"
+# stop moving
+$ rostopic pub /remote_control std_msgs/String "data: 'STOP'"
+```
+
+
+
+## Compile and Uploading files through CLI on Arduino
+
+- I used [Arduino-mk](https://github.com/sudar/Arduino-Makefile)
+
+```shell
+# install arduino-mk
+$ sudo apt-get install arduino-mk
+$ make # verification of the code
+$ make upload # upload the verified code
+$ make upload clean # upload the verified code followed by removing the built directory
+# for more details pls, check the git repo
+```
+
+
+
 ## ROS on distributed machines
 
 - Set `ROS_IP` on each machine: 
